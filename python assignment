@@ -1,1 +1,295 @@
+#1
+print("Coding is like magic, but real!")
 
+#2.1
+
+num1 = 5
+num2 = 10
+result = num1 + num2
+print("The sum of", num1, "and", num2, "is", result)
+
+#2.2
+
+
+string1 = "Hello, "
+string2 = "World!"
+combined_string = string1 + string2
+print("Concatenated String:", combined_string)
+
+#2.3
+
+
+string = "The answer is "
+number = 42
+result = string + str(number)  # Convert number to string
+print(result)
+
+#3.1
+
+
+number = int(input("Enter a number: "))
+
+if number > 0:
+    print("The number is positive.")
+elif number < 0:
+    print("The number is negative.")
+else:
+    print("The number is zero.")
+
+#3.2
+
+number = int(input("Enter a number: "))
+
+if number % 2 == 0:
+    print("The number is even.")
+else:
+    print("The number is odd.")
+
+#4.1
+
+
+for i in range(1, 11):
+    print(i)
+
+#4.2
+
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+
+#4.3
+
+for i in range(1, 101):
+    total += i
+
+print("The sum of numbers from 1 to 100 is", total)
+
+#5.1
+
+numbers = [10, 45, 2, 98, 23]
+largest = max(numbers)
+smallest = min(numbers)
+
+print("Largest number:", largest)
+print("Smallest number:", smallest)
+
+#5.2
+
+
+person = {"name": "Alice", "age": 25, "city": "New York"}
+key = "age"
+
+if key in person:
+    print("The value for key", key, "is", person[key])
+else:
+    print("Key not found!")
+
+#5.3
+
+numbers = [42, 17, 8, 99, 23]
+ascending = sorted(numbers)
+descending = sorted(numbers, reverse=True)
+
+print("Ascending order:", ascending)
+print("Descending order:", descending)
+
+#5.4
+
+dict1 = {"a": 1, "b": 2}
+dict2 = {"c": 3, "d": 4}
+
+merged_dict = {**dict1, **dict2}
+print("Merged dictionary:", merged_dict)
+
+#6.1
+
+text = input("Enter a string: ")
+vowels = "aeiouAEIOU"
+count = sum(1 for char in text if char in vowels)
+print("Number of vowels:", count)
+
+#6.2
+
+text = input("Enter a string: ")
+reversed_text = text[::-1]
+print("Reversed string:", reversed_text)
+
+#6.3
+
+text = input("Enter a string: ")
+if text == text[::-1]:
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")
+
+#7.1
+
+with open("example.txt", "w") as file:
+    file.write("Hello, this is a test file!")
+
+with open("example.txt", "r") as file:
+    content = file.read()
+
+print("File content:")
+print(content)
+
+#7.2
+
+with open("example.txt", "a") as file:
+    file.write("\nAdding another line.")
+
+with open("example.txt", "r") as file:
+    content = file.read()
+
+print("Updated file content:")
+print(content)
+
+#7.3
+
+with open("example.txt", "r") as file:
+    line_count = len(file.readlines())
+
+print("Number of lines in the file:", line_count)
+
+#8.1
+
+try:
+    numerator = int(input("Enter the numerator: "))
+    denominator = int(input("Enter the denominator: "))
+    result = numerator / denominator
+    print("Result:", result)
+except ZeroDivisionError:
+    print("Error: Division by zero is not allowed.")
+
+#8.2
+
+try:
+    number = int(input("Enter a number: "))
+    print("You entered:", number)
+except ValueError:
+    print("Error: Please enter a valid integer.")
+
+#8.3
+
+try:
+    number = int(input("Enter a number: "))
+    print("You entered:", number)
+except ValueError:
+    print("Error: Invalid input.")
+finally:
+    print("This block always executes.")
+
+#9.1
+
+# Generating 5 random numbers
+import random
+
+for _ in range(5):
+    print(random.randint(1, 100))
+
+#9.2 
+
+import random
+
+def is_prime(num):
+    if num < 2:
+        return False
+    for i in range(2, int(num**0.5) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+number = random.randint(1, 100)
+print("Random number:", number)
+if is_prime(number):
+    print("The number is prime.")
+else:
+    print("The number is not prime.")
+
+#9.3
+
+import random
+
+roll = random.randint(1, 6)
+print("You rolled a:", roll)
+
+#9.4
+
+import random
+
+numbers = [1, 2, 3, 4, 5, 6]
+random.shuffle(numbers)
+print("Shuffled list:", numbers)
+
+#9.5
+
+import random
+
+items = ["apple", "banana", "cherry", "date"]
+choice = random.choice(items)
+print("Random choice:", choice)
+
+#9.6
+
+import random
+import string
+
+length = int(input("Enter the password length: "))
+characters = string.ascii_letters + string.digits + string.punctuation
+password = ''.join(random.choices(characters, k=length))
+print("Generated password:", password)
+
+#9.7
+
+import random
+
+suits = ["Hearts", "Diamonds", "Clubs", "Spades"]
+ranks = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"]
+deck = [rank + " of " + suit for suit in suits for rank in ranks]
+
+card = random.choice(deck)
+print("Random card:", card)
+
+#10.1
+
+import sys
+
+if len(sys.argv) != 3:
+    print("Usage: python script.py num1 num2")
+else:
+    num1 = int(sys.argv[1])
+    num2 = int(sys.argv[2])
+    print("Sum:", num1 + num2)
+
+#10.2
+
+import sys
+
+if len(sys.argv) != 2:
+    print("Usage: python script.py 'your string'")
+else:
+    string = sys.argv[1]
+    print("Length of the string:", len(string))
+
+#11.1
+
+# Calculating square root
+import math
+
+number = float(input("Enter a number: "))
+print("Square root:", math.sqrt(number))
+
+#11.2
+
+from datetime import datetime
+
+now = datetime.now()
+print("Current date and time:", now)
+
+#11.3
+
+import os
+
+files = os.listdir(".")
+print("Files in the current directory:", files)
