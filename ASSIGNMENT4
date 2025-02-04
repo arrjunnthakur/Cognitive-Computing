@@ -1,0 +1,93 @@
+Q1: 
+
+import numpy as np  
+
+# Creating a 1D array with 5 elements
+arr = np.array([10, 20, 30, 40, 50])
+
+# a) Adding 2 to all elements
+addition_result = arr + 2  
+
+# b) Multiplying all elements by 3
+multiplication_result = arr * 3  
+
+# c) Dividing all elements by 2
+division_result = arr / 2  
+
+# Printing results
+print("Original array:", arr)  
+print("After addition of 2:", addition_result)  
+print("After multiplication by 3:", multiplication_result)  
+print("After division by 2:", division_result)  
+
+Q2:{A}
+
+arr = np.array([1, 2, 3, 6, 4, 5])
+reversed_arr = arr[::-1]  # Using slicing to reverse the array
+print("Reversed Array:", reversed_arr)
+
+Q2:{B}
+
+# First array
+x = np.array([1, 2, 3, 4, 5, 1, 2, 1, 1, 1])  
+most_frequent_x = np.bincount(x).argmax()  
+indices_x = np.where(x == most_frequent_x)[0]  
+
+print("Most frequent value in x:", most_frequent_x)  
+print("Indices of most frequent value in x:", indices_x)  
+
+# Second array
+y = np.array([1, 1, 1, 2, 3, 4, 2, 4, 3, 3])  
+most_frequent_y = np.bincount(y).argmax()  
+indices_y = np.where(y == most_frequent_y)[0]  
+
+print("Most frequent value in y:", most_frequent_y)  
+print("Indices of most frequent value in y:", indices_y)  
+
+Q3:{A}
+
+element_a = arr[0, 1]  # Row index 0, Column index 1
+print("Element at 1st row, 2nd column:", element_a)
+
+Q3:{B}
+
+element_b = arr[2, 0]  # Row index 2, Column index 0
+print("Element at 3rd row, 1st column:", element_b)
+
+Q4:
+
+# Creating the array
+my_array = np.linspace(10, 100, 25)
+
+# Printing properties
+print("Array:", my_array)
+print("Shape of array:", my_array.shape)
+print("Total elements:", my_array.size)
+print("Data type of elements:", my_array.dtype)
+print("Total bytes consumed:", my_array.nbytes)
+
+# Finding transpose using reshape
+transposed_array = my_array.reshape(5, 5).T  # Reshaping to 5x5 and transposing
+print("Transposed Array:\n", transposed_array)
+
+Q5:
+
+ucs420_name = np.array([[10, 20, 30, 40],  
+                        [50, 60, 70, 80],  
+                        [90, 15, 20, 35]])  
+
+mean_val = np.mean(ucs420_name)  
+max_val = np.max(ucs420_name)  
+min_val = np.min(ucs420_name)  
+unique_vals = np.unique(ucs420_name)  
+
+print("Mean:", mean_val)  
+print("Max:", max_val)  
+print("Min:", min_val)  
+print("Unique Elements:", unique_vals)  
+
+reshaped_ucs420_name = ucs420_name.reshape(4, 3)
+print("Reshaped (4x3) Array:\n", reshaped_ucs420_name)
+
+resized_ucs420_name = ucs420_name[:2, :3]  
+print("Resized (2x3) Array:\n", resized_ucs420_name)  
